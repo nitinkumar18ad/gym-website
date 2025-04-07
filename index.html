@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Fitness</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            background: url('img/bg.jpg') no-repeat center center/cover;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.497);
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+        }
+
+        .left img {
+            width: 80px;
+            filter: invert(100%);
+            margin-right: 10px;
+        }
+
+        .mid {
+            flex: 1;
+            text-align: center;
+        }
+
+        .navbar {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            padding: 10px;
+        }
+
+        .navbar li a:hover,
+        .navbar li a.active {
+            color: #f39c12;
+            border-bottom: 2px solid #f39c12;
+        }
+
+        .right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+        }
+
+        .container {
+            background:linear-gradient(rgb(152, 95, 95),black);
+            padding: 30px;
+            width: 40%;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease; /* Smooth transition */
+            transform: scale(1); /* Default scale */
+        }
+        
+        .container:hover {
+            transform: scale(1.05); /* Slight zoom */
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3); /* Brighter glow */
+        }
+
+
+        .container h1 {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #f39c12;
+            border-radius: 5px;
+            outline: none;
+            text-align: center;
+            transition: border 0.3s ease-in-out;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #e67e22;
+        }
+
+        .container button {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .mid {
+                margin-top: 15px;
+            }
+
+            .right {
+                margin-top: 10px;
+            }
+
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="img/gym.jpg" alt="XYZ Fitness Logo">
+            <div><strong>XYZ Fitness</strong></div>
+        </div>
+
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Fitness Calculator</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="right">
+            <button class="btn">Call Us Now</button>
+            <button class="btn">Email Us</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Join the Best Gym Now</h1>
+        <form action="noaction.php">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="age" placeholder="Enter your Age" required>
+            </div>
+            <div class="form-group">
+                <select name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
